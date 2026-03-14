@@ -3,6 +3,7 @@ package com.deploy.Praktikum2.controller;
 import com.deploy.Praktikum2.model.dto.KtpAddRequest;
 import com.deploy.Praktikum2.model.dto.KtpDto;
 import com.deploy.Praktikum2.service.KtpService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,7 +24,7 @@ public class KtpController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Map<String, Object>> AddKtp(@RequestBody KtpAddRequest request) {
+    public ResponseEntity<Map<String, Object>> AddKtp(@Valid @RequestBody KtpAddRequest request) {
         KtpDto result = ktpService.AddKtp(request);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
