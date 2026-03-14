@@ -24,6 +24,9 @@ public class Ktp {
     @Column(name = "nomor_ktp", nullable = false, unique = true, length = 16)
     private String nomorKtp;
 
+    @Column(name = "nama_lengkap", nullable = false, length = 100)
+    private String namaLengkap;
+
     @Column(name = "alamat", nullable = false)
     private String alamat;
 
@@ -31,7 +34,7 @@ public class Ktp {
     private LocalDate tanggalLahir;
 
     @Column(name = "jenis_kelamin", nullable = false, length = 20)
-    private  String jeniskelamin;
+    private  String jenisKelamin;
 
 
 }
